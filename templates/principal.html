@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Felicidades a los ganadores!</h1>
+    <p class="lead">El ganador de la quiniela de esta semana es: {{user.name}}</p>
+    <hr class="my-4">
+    <p>Suerte para la proxima</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Resultados completos</a>
+    </p>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <h3>Jornada: {{jornada.id}}</h3>
+    <div class="resultados">
+        <ul>
+            <div class="local">
+
+            </div>
+        </ul>
+    </div>
+</div>
