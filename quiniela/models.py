@@ -50,7 +50,7 @@ class Quiniela(db.model):
     """
     Esta tabla guardara las quinielas de cada jornada y torneo
     """
-    __tablename__  = 'partidos'
+    __tablename__  = 'quiniela'
 
     id = db.Column(db.Integer, primary_key=True)
     jornada = db.Column(db.Integer)
@@ -69,3 +69,13 @@ class Quiniela_Det(db.model):
     id_quiniela = db.Column(db.Integer, db.ForeignKey('quiniela.id', ondelete='CASCADE'))
     id_usuario = db.Column(db.Integer, db.ForeignKey('user.id'))
     id_partido1 = db.Column (db.integer)
+
+
+
+class Partidos (db.model):
+    """"
+
+    """
+
+    __tablename__ = 'partidos'
+    jornada
