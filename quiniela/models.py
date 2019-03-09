@@ -68,14 +68,47 @@ class Quiniela_Det(db.model):
     id = db.Column(db.Integer, primary_key=True)
     id_quiniela = db.Column(db.Integer, db.ForeignKey('quiniela.id', ondelete='CASCADE'))
     id_usuario = db.Column(db.Integer, db.ForeignKey('user.id'))
-    id_partido1 = db.Column (db.integer)
-
-
+    resloc1 = db.Column(db.Integer)
+    resvisit1 = db.Column(db.Integer)
+    resloc2 = db.Column(db.Integer)
+    resvisit2 = db.Column(db.Integer)
+    resloc3 = db.Column(db.Integer)
+    resvisit3 = db.Column(db.Integer)
+    resloc4 = db.Column(db.Integer)
+    resvisit4 = db.Column(db.Integer)
+    resloc5 = db.Column(db.Integer)
+    resvisit5 = db.Column(db.Integer)
+    resloc6 = db.Column(db.Integer)
+    resvisit6 = db.Column(db.Integer)
+    resloc7 = db.Column(db.Integer)
+    resvisit7 = db.Column(db.Integer)
+    resloc8 = db.Column(db.Integer)
+    resvisit8 = db.Column(db.Integer)
+    resloc9 = db.Column(db.Integer)
+    resvisit9 = db.Column(db.Integer)
 
 class Partidos (db.model):
     """"
-
+    En esta tabla se guardaran los datos de los partidos de cada jornada
     """
 
     __tablename__ = 'partidos'
-    jornada
+    jornada = db.Column(db.Integer, db.ForeignKey('quiniela.jornada', ondelete='CASCADE'))
+    local1 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    visit1 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    local2 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    visit2 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    local3 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    visit3 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    local4 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    visit4 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    local5 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    visit5 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    local6 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    visit6 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    local7 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    visit7 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    local8 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    visit8 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    local9 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+    visit9 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
