@@ -88,7 +88,11 @@ class Quiniela_Det(db.model):
     resloc9 = db.Column(db.Integer)
     resvisit9 = db.Column(db.Integer)
 
+<<<<<<< HEAD
 class Partidos(db.model):
+=======
+class Partidos (db.model):
+>>>>>>> Database
     """"
     En esta tabla se guardaran los datos de los partidos de cada jornada
     """
@@ -113,6 +117,7 @@ class Partidos(db.model):
     visit8 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
     local9 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
     visit9 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
+<<<<<<< HEAD
 
 class Resultados(db.model):
     """"
@@ -157,3 +162,5 @@ class Resultados(db.model):
     visit9 = db.Column(db.String(50), db.ForeignKey('partidos.visit9'))
     res_loc9 = db.Column(db.Integer)
     res_visit9 = db.Column(db.Integer)
+=======
+>>>>>>> Database
