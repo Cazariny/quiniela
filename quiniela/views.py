@@ -93,3 +93,11 @@ def logout():
     """
     logout_user()
     return redirect(url_for('index'))
+
+
+@app.route('/equipos')
+@login_required
+def new_quiniela():
+    """"
+    Esta ruta mandara a la pantalla para observar los equipos
+    """
