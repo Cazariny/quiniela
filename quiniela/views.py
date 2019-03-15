@@ -102,4 +102,6 @@ def equipos():
     Esta ruta mandara a la pantalla para observar los equipos
     """
 
-    equipos =
+    equipos = Equipos.query.order_by(desc(Equipos.id))
+    return render_template("equipos.html")
+
