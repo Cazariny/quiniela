@@ -9,9 +9,9 @@ from flask import render_template, redirect, url_for, session, request,\
 from requests.exceptions import HTTPError
 
 from config import Auth
-from quiniela.helpers import get_google_auth, categories_to_json, \
-    get_category_list, is_not_authorized
-from quiniela.models import User, Category, Item
+from quiniela.helpers import get_google_auth
+from quiniela.models import User, Equipos, Division, Partidos,Quiniela,\
+    Quiniela_Det, Torneo,
 
 @app.route('/login')
 def login():
@@ -97,7 +97,9 @@ def logout():
 
 @app.route('/equipos')
 @login_required
-def new_quiniela():
+def equipos():
     """"
     Esta ruta mandara a la pantalla para observar los equipos
     """
+
+    equipos =
