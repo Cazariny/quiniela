@@ -105,3 +105,5 @@ def equipos():
     equipos = Equipos.query.order_by(desc(Equipos.id))
     return render_template("equipos.html")
 
+@app.route('/')
+

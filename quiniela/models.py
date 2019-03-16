@@ -24,6 +24,7 @@ class Equipos(db.model):
     id = db.Column(db.Integer)
     nombre = db.Column(db.String(50))
     sede = db.Column(db.String(50))
+    info = db
     id_division = db.Column(db.Integer, db.ForeignKey('division.id'))
 
 class Division(db.model):
@@ -117,6 +118,8 @@ class Resultados(db.model):
     """"
     En esta tabla se guardaran los resultados verdaderos de cada jornada
     """
+
+    __tablename__ = 'Resultados'
     jornada = db.Column(db.Integer, db.ForeignKey('quiniela.jornada', ondelete='CASCADE'))
     local1 = db.Column(db.String(50), db.ForeignKey('partidos.local1'))
     visit1 = db.Column(db.String(50), db.ForeignKey('partidos.visit1'))
