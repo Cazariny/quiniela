@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class = 'pane'>
+    <form action="{{ url_for('newItem', categories= category)}}" method = 'post'>
+
+        <dl>
+           <h1>Nueva Quiniela</h1>
+
+        </dl>
+
+
+
+        <input type='submit' value='Create'>
+
+    </form>
+</div>
+{% endblock %}

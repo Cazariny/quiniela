@@ -105,5 +105,10 @@ def equipos():
     equipos = Equipos.query.order_by(desc(Equipos.id))
     return render_template("equipos.html")
 
-@app.route('/')
+@app.route('/new')
+@login_required
+def new_quiniela():
+    equipos = Equipos.query.all()
+    if request.method == 'POST':
+
 

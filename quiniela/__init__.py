@@ -35,7 +35,7 @@ login_manager.login_view = "login"
 db = SQLAlchemy(app)
 
 # these imports listed below to resolve circular imports
-import quiniela.aplication
+import quiniela.views
 import quiniela.models
 from quiniela.models import User
 
