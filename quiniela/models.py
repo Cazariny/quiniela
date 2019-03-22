@@ -24,7 +24,7 @@ class Equipos(db.model):
     id = db.Column(db.Integer)
     nombre = db.Column(db.String(50))
     sede = db.Column(db.String(50))
-    info = db
+    # info = db
     id_division = db.Column(db.Integer, db.ForeignKey('division.id'))
 
 class Division(db.model):
@@ -114,46 +114,46 @@ class Partidos(db.model):
     local9 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
     visit9 = db.Column(db.String(50), db.ForeignKey('equipos.nombre'))
 
-class Resultados(db.model):
-    """"
-    En esta tabla se guardaran los resultados verdaderos de cada jornada
-    """
-
-    __tablename__ = 'Resultados'
-    jornada = db.Column(db.Integer, db.ForeignKey('quiniela.jornada', ondelete='CASCADE'))
-    local1 = db.Column(db.String(50), db.ForeignKey('partidos.local1'))
-    visit1 = db.Column(db.String(50), db.ForeignKey('partidos.visit1'))
-    res_loc1 = db.Column(db.Integer)
-    res_visit1 = db.Column(db.Integer)
-    local2 = db.Column(db.String(50), db.ForeignKey('partidos.local2'))
-    visit2 = db.Column(db.String(50), db.ForeignKey('partidos.visit2'))
-    res_loc2 = db.Column(db.Integer)
-    res_visit2 = db.Column(db.Integer)
-    local3 = db.Column(db.String(50), db.ForeignKey('partidos.local3'))
-    visit3 = db.Column(db.String(50), db.ForeignKey('partidos.visit3'))
-    res_loc3 = db.Column(db.Integer)
-    res_visit3 = db.Column(db.Integer)
-    local4 = db.Column(db.String(50), db.ForeignKey('partidos.local4'))
-    visit4 = db.Column(db.String(50), db.ForeignKey('partidos.visit4'))
-    res_loc4 = db.Column(db.Integer)
-    res_visit4 = db.Column(db.Integer)
-    local5 = db.Column(db.String(50), db.ForeignKey('partidos.local5'))
-    visit5 = db.Column(db.String(50), db.ForeignKey('partidos.visit5'))
-    res_loc5 = db.Column(db.Integer)
-    res_visit5 = db.Column(db.Integer)
-    local6 = db.Column(db.String(50), db.ForeignKey('partidos.local6'))
-    visit6 = db.Column(db.String(50), db.ForeignKey('partidos.visit6'))
-    res_loc6 = db.Column(db.Integer)
-    res_visit6 = db.Column(db.Integer)
-    local7 = db.Column(db.String(50), db.ForeignKey('partidos.local7'))
-    visit7 = db.Column(db.String(50), db.ForeignKey('partidos.visit7'))
-    res_loc7 = db.Column(db.Integer)
-    res_visit7 = db.Column(db.Integer)
-    local8 = db.Column(db.String(50), db.ForeignKey('partidos.local8'))
-    visit8 = db.Column(db.String(50), db.ForeignKey('partidos.visit8'))
-    res_loc8 = db.Column(db.Integer)
-    res_visit8 = db.Column(db.Integer)
-    local9 = db.Column(db.String(50), db.ForeignKey('partidos.local9'))
-    visit9 = db.Column(db.String(50), db.ForeignKey('partidos.visit9'))
-    res_loc9 = db.Column(db.Integer)
-    res_visit9 = db.Column(db.Integer)
+# class Resultados(db.model):
+#     """"
+#     En esta tabla se guardaran los resultados verdaderos de cada jornada
+#     """
+#
+#     __tablename__ = 'Resultados'
+#     jornada = db.Column(db.Integer, db.ForeignKey('quiniela.jornada', ondelete='CASCADE'))
+#     local1 = db.Column(db.String(50), db.ForeignKey('partidos.local1'))
+#     visit1 = db.Column(db.String(50), db.ForeignKey('partidos.visit1'))
+#     res_loc1 = db.Column(db.Integer)
+#     res_visit1 = db.Column(db.Integer)
+#     local2 = db.Column(db.String(50), db.ForeignKey('partidos.local2'))
+#     visit2 = db.Column(db.String(50), db.ForeignKey('partidos.visit2'))
+#     res_loc2 = db.Column(db.Integer)
+#     res_visit2 = db.Column(db.Integer)
+#     local3 = db.Column(db.String(50), db.ForeignKey('partidos.local3'))
+#     visit3 = db.Column(db.String(50), db.ForeignKey('partidos.visit3'))
+#     res_loc3 = db.Column(db.Integer)
+#     res_visit3 = db.Column(db.Integer)
+#     local4 = db.Column(db.String(50), db.ForeignKey('partidos.local4'))
+#     visit4 = db.Column(db.String(50), db.ForeignKey('partidos.visit4'))
+#     res_loc4 = db.Column(db.Integer)
+#     res_visit4 = db.Column(db.Integer)
+#     local5 = db.Column(db.String(50), db.ForeignKey('partidos.local5'))
+#     visit5 = db.Column(db.String(50), db.ForeignKey('partidos.visit5'))
+#     res_loc5 = db.Column(db.Integer)
+#     res_visit5 = db.Column(db.Integer)
+#     local6 = db.Column(db.String(50), db.ForeignKey('partidos.local6'))
+#     visit6 = db.Column(db.String(50), db.ForeignKey('partidos.visit6'))
+#     res_loc6 = db.Column(db.Integer)
+#     res_visit6 = db.Column(db.Integer)
+#     local7 = db.Column(db.String(50), db.ForeignKey('partidos.local7'))
+#     visit7 = db.Column(db.String(50), db.ForeignKey('partidos.visit7'))
+#     res_loc7 = db.Column(db.Integer)
+#     res_visit7 = db.Column(db.Integer)
+#     local8 = db.Column(db.String(50), db.ForeignKey('partidos.local8'))
+#     visit8 = db.Column(db.String(50), db.ForeignKey('partidos.visit8'))
+#     res_loc8 = db.Column(db.Integer)
+#     res_visit8 = db.Column(db.Integer)
+#     local9 = db.Column(db.String(50), db.ForeignKey('partidos.local9'))
+#     visit9 = db.Column(db.String(50), db.ForeignKey('partidos.visit9'))
+#     res_loc9 = db.Column(db.Integer)
+#     res_visit9 = db.Column(db.Integer)

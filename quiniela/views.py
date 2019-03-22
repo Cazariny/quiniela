@@ -105,10 +105,37 @@ def equipos():
     equipos = Equipos.query.order_by(desc(Equipos.id))
     return render_template("equipos.html")
 
-@app.route('/new')
+@app.route('/int:jornada/new')
 @login_required
 def new_quiniela():
     equipos = Equipos.query.all()
+    quiniela = Quiniela.query.all()
     if request.method == 'POST':
-
+        newQuiniela = Quiniela_Det(jornada=quiniela.jornada,
+                        id_quiniela=quiniela.id,
+                        user_id=current_user.id,
+                        resloc1=request.form['local1'],
+                        resvisit1 = request.form['visitante1'],
+                        resloc2=request.form['local2'],
+                        resvisit2=request.form['visitante2'],
+                        resloc3=request.form['local3'],
+                        resvisit3=request.form['visitante3'],
+                        resloc4=request.form['local4'],
+                        resvisit4=request.form['visitante4'],
+                        resloc5=request.form['local5'],
+                        resvisit5=request.form['visitante5'],
+                        resloc6=request.form['local6'],
+                        resvisit6=request.form['visitante6'],
+                        resloc7=request.form['local7'],
+                        resvisit7=request.form['visitante7'],
+                        resloc8=request.form['local8'],
+                        resvisit8=request.form['visitante8'],
+                        resloc9=request.form['local9'],
+                        resvisit9=request.form['visitante9']
+                       )
+        db.session.add(newQuiniela)
+        db.session.commit()
+        return redirect(url_for('principal'))
+    else:
+        return render_template('newitem.html', categories=category)
 
