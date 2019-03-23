@@ -30,6 +30,7 @@ def new_torneo(name):
     return torneos
 
 
+
 def main():
     # list of category names
     division = ['Primera division',

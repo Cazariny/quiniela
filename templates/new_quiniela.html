@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class = 'pane'>
+    <form action="{{ url_for('newItem', categories= category)}}" method = 'POST'>
+
+        <dl>
+            <h1>Nueva Quiniela</h1>
+            <dt>partido 1 </dt>
+            <input type="number" name="local" value="local1">
+            <input type="number" name="visitante" value="visitante1">
+            <dt>partido 2 </dt>
+            <input type="number" name="local" value="local2">
+            <input type="number" name="visitante" value="visitante2">
+            <dt>partido 3 </dt>
+            <input type="number" name="local" value="local3">
+            <input type="number" name="visitante" value="visitante3">
+            <dt>partido 4 </dt>
+            <input type="number" name="local" value="local4">
+            <input type="number" name="visitante" value="visitante4">
+            <dt>partido 5 </dt>
+            <input type="number" name="local" value="local5">
+            <input type="number" name="visitante" value="visitante5">
+            <dt>partido 6 </dt>
+            <input type="number" name="local" value="local6">
+            <input type="number" name="visitante" value="visitante6">
+            <dt>partido 7 </dt>
+            <input type="number" name="local" value="local7">
+            <input type="number" name="visitante" value="visitante7">
+            <dt>partido 8 </dt>
+            <input type="number" name="local" value="local8">
+            <input type="number" name="visitante" value="visitante8">
+            <dt>partido 9 </dt>
+            <input type="number" name="local" value="local9">
+            <input type="number" name="visitante" value="visitante9">
+        </dl>
+
+        <input type='submit' value='Create'>
+    </form>
+</div>
+{% endblock %}
