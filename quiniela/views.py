@@ -4,14 +4,15 @@ from datetime import datetime
 from quiniela import app, db
 from flask_login import current_user, login_user, login_required, logout_user
 from sqlalchemy import desc
+from sqlalchemy.sql import text
 from flask import render_template, redirect, url_for, session, request,\
     jsonify
 from requests.exceptions import HTTPError
 
 from config import Auth
 from quiniela.helpers import get_google_auth
-from quiniela.models import User, Equipos, Division, Partidos,Quiniela,\
-    Quiniela_Det, Torneo,
+from quiniela.models import User, Equipos, Division, Partidos, Jornada,\
+    Quiniela_Det, Torneo, HQuiniela
 
 @app.route('/login')
 def login():
@@ -107,15 +108,18 @@ def equipos():
 
 @app.route('/int:jornada/new')
 @login_required
-def new_quiniela():
-    jornada =
-    hquiniela =
-    partidos =
+def new_quiniela(numjornada):
+    jornada = Jornada.query.filter_by(id=numjornada)
+    hquiniela = HQuiniela.query.join(Jornada).\
+        filter(id_jornada=numjornada, id_usuario=current_user)
+    partidos = Partidos.query.join(Jornada).\
+        filter(id_jornada=numjornada)
     if request.method == 'POST':
-        newQuiniela = Quiniela_Det(jornada=quiniela.jornada,
-                        id_quiniela=quiniela.id,
-                        user_id=current_user.id,
-                       )
+        newQuiniela = Quiniela_Det(jornada=numjornada,
+                                   id_quiniela=hquiniela.id,
+                                   reslocal=request.form['local'],
+                                   resvisitante=request.form['visitante']
+                                   )
         db.session.add(newQuiniela)
         db.session.commit()
         return redirect(url_for('principal'))
