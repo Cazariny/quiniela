@@ -5,14 +5,12 @@ from quiniela import app, db
 from flask_login import current_user, login_user, login_required, logout_user
 from sqlalchemy import desc
 from sqlalchemy.sql import text
-from flask import render_template, redirect, url_for, session, request,\
-    jsonify
+from flask import render_template, redirect, url_for, session, request, jsonify
 from requests.exceptions import HTTPError
 
 from config import Auth
 from quiniela.helpers import get_google_auth
-from quiniela.models import User, Equipos, Division, Partidos, Jornada,\
-    Quiniela_Det, Torneo, HQuiniela
+from quiniela.models import User, Equipos, Division, Partidos, Jornada, Quiniela_Det, Torneo, HQuiniela
 
 @app.route('/login')
 def login():

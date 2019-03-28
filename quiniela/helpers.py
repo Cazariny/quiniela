@@ -1,7 +1,6 @@
 
 from requests_oauthlib import OAuth2Session
 from config import Auth
-from quiniela.models import Categories, Items
 from flask_login import current_user
 
 def get_google_auth(state=None, token=None):
